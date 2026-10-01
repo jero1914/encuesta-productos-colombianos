@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Productos Colombianos | TuBrand</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>Sabores de Colombia</span>
+            </div>
+            <div class="nav-info">
+                <span id="total-votos">Votos: 0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>¿Cuál es tu Producto Favorito?</h1>
+            <p>Descubre los sabores más auténticos de Colombia y vota por tus favoritos</p>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Encuesta Section -->
+        <section class="survey-section">
+            <div class="section-header">
+                <h2>Nuestros Productos Destacados</h2>
+                <p>Selecciona tu favorito y déjanos saber qué te gusta más</p>
+            </div>
+
+            <!-- Productos Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se cargarán aquí mediante JavaScript -->
+            </div>
+        </section>
+
+        <!-- Espacios para agregar productos personalizados -->
+        <section class="custom-products-section">
+            <div class="section-header">
+                <h2>Tus Productos Personalizados</h2>
+                <p>Agrega productos de tu preferencia</p>
+            </div>
+
+            <div class="custom-slots-grid" id="customSlotsGrid">
+                <!-- Los espacios personalizados se cargarán aquí -->
+            </div>
+
+            <!-- Formulario para agregar producto -->
+            <div class="add-product-form">
+                <h3>¿Tienes un producto favorito que no está en la lista?</h3>
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        id="productNameInput" 
+                        placeholder="Nombre del producto (ej: Galletas Tía)"
+                        maxlength="50"
+                    >
+                    <input 
+                        type="text" 
+                        id="productImageInput" 
+                        placeholder="URL de la imagen (ej: https://...)"
+                    >
+                    <button id="addProductBtn" class="btn-add-product">
+                        <i class="fas fa-plus"></i> Agregar Producto
+                    </button>
+                </div>
+                <p class="form-hint">Los productos agregados se mostrarán en tiempo real</p>
+            </div>
+        </section>
+
+        <!-- Resultados Section -->
+        <section class="results-section">
+            <div class="section-header">
+                <h2>Resultados en Tiempo Real</h2>
+                <p>Los productos más votados</p>
+            </div>
+
+            <div class="results-container">
+                <div class="top-products" id="topProducts">
+                    <!-- Los resultados se cargarán aquí -->
+                </div>
+            </div>
+
+            <!-- Estadísticas -->
+            <div class="statistics">
+                <div class="stat-card">
+                    <i class="fas fa-poll"></i>
+                    <div>
+                        <h4>Total de Votos</h4>
+                        <p id="statTotalVotos">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-star"></i>
+                    <div>
+                        <h4>Favorito</h4>
+                        <p id="statFavorito">Sin datos</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-list"></i>
+                    <div>
+                        <h4>Productos</h4>
+                        <p id="statProductos">0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Acciones -->
+        <section class="actions-section">
+            <button id="resetBtn" class="btn-secondary">
+                <i class="fas fa-redo"></i> Reiniciar Encuesta
+            </button>
+            <button id="downloadBtn" class="btn-secondary">
+                <i class="fas fa-download"></i> Descargar Resultados
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Sabores de Colombia. Encuesta de Preferencias de Productos.</p>
+    </footer>
+
+    <!-- Toast Notifications -->
+    <div id="toast" class="toast"></div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
